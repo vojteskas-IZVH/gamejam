@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiddlePlane : MonoBehaviour
+public class TopBorder : MonoBehaviour
 {
     public GameManager gameManager;
 
@@ -17,10 +17,10 @@ public class MiddlePlane : MonoBehaviour
     {
         
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.layer == 3){
-            gameManager.addScore();
+            gameManager.endGame();
         }
 
     }

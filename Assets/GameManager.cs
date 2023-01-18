@@ -12,4 +12,9 @@ public class GameManager : MonoBehaviour
         score += 1;
         scoreText.text = score.ToString();
     }
+
+    public void endGame(){
+        score = 0;
+        scoreText.text = "0";
+    }
 }
