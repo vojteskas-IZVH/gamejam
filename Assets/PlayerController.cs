@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput _playerInput;
     private float _inputX;
+    private bool _goingRight = true;
 
     private void Awake()
     {
@@ -25,6 +26,12 @@ public class PlayerController : MonoBehaviour
         if(IsAlive)
         {
             _inputX = context.ReadValue<Vector2>().x;
+            // Rotate the character if turning
+            if ((_inputX > 0 && !_goingRight) || (_inputX < 0 && _goingRight))
+            {
+                transform.rotation *= Quaternion.Euler(0, 180, 0);
+                _goingRight = !_goingRight;
+            }
         }
     }
 
