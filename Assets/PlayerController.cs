@@ -9,11 +9,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D myRigidBody;
     public float jumpStrength;
     public float moveSpeed;
-    
     public bool IsGrounded;
+    public bool IsAlive = true;
 
     private PlayerInput _playerInput;
-    
     private float _inputX;
 
     private void Awake()
@@ -23,15 +22,35 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _inputX = context.ReadValue<Vector2>().x;
+        if(IsAlive)
+        {
+            _inputX = context.ReadValue<Vector2>().x;
+        }
     }
+
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded)
+        if (context.performed && IsGrounded && IsAlive)
         {
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpStrength);
+            IsGrounded = false;
         }
+    }
+    
+    public void OnGround()
+    {
+        IsGrounded = true;
+    }
+
+    public void OffGround()
+    {
+        IsGrounded = false;
+    }
+
+    public void OnGameOver()
+    {
+        IsAlive = false;
     }
     
     void Start()
@@ -41,7 +60,10 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        Move();
+        if(IsAlive)
+        {
+            Move();
+        }
     }
 
     void Move()

@@ -8,8 +8,10 @@ public class MainMenuButton : MonoBehaviour
     public bool loadScene;
     public int sceneIndex;
 
-    public void OnClick(){
-        if(loadScene){
+    public void OnClick()
+    {
+        if(loadScene)
+        {
             SceneManager.LoadScene(sceneIndex);
         }
     }

@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiddlePlane : MonoBehaviour
+public class Plane : MonoBehaviour
 {
-    public GameManager gameManager;
     public PlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
@@ -24,9 +22,7 @@ public class MiddlePlane : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            gameManager.addScore(1);
-            player.OffGround();
+            player.OnGround();
         }
-
     }
 }

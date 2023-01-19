@@ -10,8 +10,6 @@ public class PlaneSpawner : MonoBehaviour
 
     private float timer = 0;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +19,11 @@ public class PlaneSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer < spawnRate){
+        if(timer < spawnRate)
+        {
             timer += Time.deltaTime;
-        }else{
+        }else
+        {
             spawnPlane();
             timer = 0;
         }
@@ -31,7 +31,8 @@ public class PlaneSpawner : MonoBehaviour
         
     }
 
-    void spawnPlane(){
+    void spawnPlane()
+    {
         float leftPoint = transform.position.x - offset;
         float rightPoint = transform.position.x + offset;
 

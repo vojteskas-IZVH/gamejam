@@ -18,7 +18,8 @@ public class PlaneMoveController : MonoBehaviour
     {
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
 
-        if(transform.position.y > deadZone){
+        if(transform.position.y > deadZone)
+        {
             Destroy(gameObject);
         }
     }
