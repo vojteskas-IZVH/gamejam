@@ -11,10 +11,16 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public bool IsGrounded;
     public bool IsAlive = true;
+    public Animator animator;
 
     private PlayerInput _playerInput;
     private float _inputX;
     private bool _goingRight = true;
+    private bool _isJumping = false;
+    private bool _isFalling = false;
+    private static readonly int animatorSpeedKey = Animator.StringToHash("Speed");
+    private static readonly int animatorIsJumpingKey = Animator.StringToHash("IsJumping");
+    private static readonly int animatorIsFallingKey = Animator.StringToHash("IsFalling");
 
     private void Awake()
     {
@@ -69,12 +75,17 @@ public class PlayerController : MonoBehaviour
     {
         if(IsAlive)
         {
-            Move();
+            var velocity = _inputX * moveSpeed;
+            Move(velocity);
+
+            animator.SetFloat(animatorSpeedKey, Mathf.Abs(velocity));
+            animator.SetBool(animatorIsJumpingKey, myRigidBody.velocity.y > 0);
+            animator.SetBool(animatorIsFallingKey, myRigidBody.velocity.y < 0);
         }
     }
 
-    void Move()
+    void Move(float velocityX)
     {
-        myRigidBody.velocity = new Vector2(_inputX * moveSpeed, myRigidBody.velocity.y);
+        myRigidBody.velocity = new Vector2(velocityX, myRigidBody.velocity.y);
     }
 }
