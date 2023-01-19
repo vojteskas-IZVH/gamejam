@@ -1,35 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
-    public float jumpStrenght;
+    public float jumpStrength;
+    public float moveSpeed;
+    
+    public bool IsGrounded;
 
-    // Start is called before the first frame update
+    private PlayerInput _playerInput;
+    
+    private float _inputX;
+
+    private void Awake()
+    {
+        _playerInput = GetComponent<PlayerInput>();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        _inputX = context.ReadValue<Vector2>().x;
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && IsGrounded)
+        {
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpStrength);
+        }
+    }
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
         Move();
     }
 
-    void Move(){
-        if(Input.GetKeyDown(KeyCode.UpArrow)){
-            myRigidBody.velocity = Vector2.up * jumpStrenght;
-        }
-
-        if( Input.GetKeyDown(KeyCode.LeftArrow)){
-            myRigidBody.velocity = Vector2.left * jumpStrenght;
-        }
-
-        if( Input.GetKeyDown(KeyCode.RightArrow)){
-            myRigidBody.velocity = Vector2.right * jumpStrenght;
-        }
+    void Move()
+    {
+        myRigidBody.velocity = new Vector2(_inputX * moveSpeed, myRigidBody.velocity.y);
     }
 }
