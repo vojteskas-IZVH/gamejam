@@ -214,6 +214,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: -8254501348869134682, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: -0.0011357144
+      objectReference: {fileID: 0}
+    - target: {fileID: -8254501348869134682, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.16204002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8254501348869134682, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.057470016
+      objectReference: {fileID: 0}
+    - target: {fileID: -8254501348869134682, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.23000005
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -321,6 +337,14 @@ PrefabInstance:
     - target: {fileID: -4943264198510869528, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4220188179209747123, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12935498
+      objectReference: {fileID: 0}
+    - target: {fileID: -4220188179209747123, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000020842503
       objectReference: {fileID: 0}
     - target: {fileID: -4220188179209747123, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -494,6 +518,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6874644101018729181, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6946549289004111019, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01001823
@@ -560,23 +588,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8566640381488495759, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7073103
+      value: 0.7067959
       objectReference: {fileID: 0}
     - target: {fileID: 8566640381488495759, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8566640381488495759, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8566640381488495759, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7069033
+      value: 0.70741755
       objectReference: {fileID: 0}
     - target: {fileID: 8566640381488495759, guid: fe72a27796fe477429be29b530c697ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: fe72a27796fe477429be29b530c697ad, type: 3}
@@ -760,7 +788,19 @@ MonoBehaviour:
     m_ActionId: ab257816-2af7-4408-b6ec-2e1477e1e6fe
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 424828253}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 70a13e9e-b1c6-46fb-a491-d8a5b8ac0976
     m_ActionName: Player/Sword[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1860,6 +1900,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2065887120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6874644101018729181, guid: fe72a27796fe477429be29b530c697ad, type: 3}
+  m_PrefabInstance: {fileID: 379838371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2065887122
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065887120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.21507692, y: -0.025834743}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.56984615, y: 0.16309243}
+  m_EdgeRadius: 0
 --- !u!1 &2104546297
 GameObject:
   m_ObjectHideFlags: 0
