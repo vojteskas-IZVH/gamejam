@@ -7,7 +7,6 @@ public class PlaneSpawner : MonoBehaviour
     public GameObject plane;
     public float spawnRate = 2;
     public float offset = 10;
-
     private float timer = 0;
 
     // Start is called before the first frame update
@@ -27,8 +26,6 @@ public class PlaneSpawner : MonoBehaviour
             spawnPlane();
             timer = 0;
         }
-
-        
     }
 
     void spawnPlane()
