@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
         IsAlive = false;
         myRigidBody.gravityScale = 0;
         myRigidBody.velocity = new Vector2(0, 0);
+        animator.enabled = false;
     }
 
     public void OnGameStart()
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         myRigidBody.gravityScale = 1.5f;
         myRigidBody.velocity = new Vector2(0, 0);
         _inputX = 0;
+        animator.enabled = true;
     }
     
     void Start()
