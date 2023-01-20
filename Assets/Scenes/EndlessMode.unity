@@ -171,7 +171,7 @@ MonoBehaviour:
   enemy: {fileID: 2719237245981727102, guid: 00c75db675091e94dbc37900e4c82066, type: 3}
   spawnFrequencyMean: 4
   spawnFrequencyStd: 2
-  scoreThreshold: 3
+  scoreThreshold: 10
 --- !u!1 &228695053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   enemy: {fileID: 2719237245981727102, guid: 00c75db675091e94dbc37900e4c82066, type: 3}
   spawnFrequencyMean: 4
   spawnFrequencyStd: 2
-  scoreThreshold: 3
+  scoreThreshold: 10
 --- !u!1 &1265513059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   enemy: {fileID: 2719237245981727102, guid: 00c75db675091e94dbc37900e4c82066, type: 3}
   spawnFrequencyMean: 4
   spawnFrequencyStd: 2
-  scoreThreshold: 3
+  scoreThreshold: 10
 --- !u!1 &1513454962
 GameObject:
   m_ObjectHideFlags: 0

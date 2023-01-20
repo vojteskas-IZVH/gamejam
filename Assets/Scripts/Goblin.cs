@@ -23,7 +23,13 @@ public class Goblin : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other) // other == another collider
     {
         
-        if (other.CompareTag("Sword") || other.CompareTag("Finish"))
+        if (other.CompareTag("Sword"))
+        {
+            GameManager.Instance.AddScore(1);
+            DestroyGoblin();
+        }
+
+        if (other.CompareTag("Finish"))
         {
             DestroyGoblin();
         }
