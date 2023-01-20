@@ -29,7 +29,7 @@ public class Goblin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log(("Goblin killed a player!"));
-            GameManager.Instance.endGame();
+            GameManager.Instance.EndGame();
         }
     }
 
