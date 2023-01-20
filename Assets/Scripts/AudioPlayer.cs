@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-    private AudioSource sound;
+    public AudioSource walkSound;
+
+    public AudioSource swordSound;
     // Start is called before the first frame update
     void Start()
     {
-        sound = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -19,6 +21,10 @@ public class AudioPlayer : MonoBehaviour
 
     public void playSound_Walk()
     {
-        sound.Play();
+        walkSound.Play();
+    }
+    public void playSound_Sword()
+    {
+        swordSound.Play();
     }
 }
