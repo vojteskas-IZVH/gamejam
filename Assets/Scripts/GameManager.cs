@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public AudioSource deathSound;
     public AudioSource victorySound;
+    public AudioSource goblinDeathSound;
     
     // Singleton instance of the GameManager.
     private static GameManager sInstance;

@@ -9,6 +9,9 @@ public class Goblin : MonoBehaviour
     public float speed = 1.0f;
     private BoxCollider2D mBoxTrigger;
     private Rigidbody2D mRigidBody;
+    public AudioSource deathSound;
+
+    private bool _goingRight = false;
 
     private void Awake()
     {
@@ -17,24 +20,29 @@ public class Goblin : MonoBehaviour
         mRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    public void OnTriggerEnter(Collider other) // other == another collider
+    public void OnTriggerEnter2D(Collider2D other) // other == another collider
     {
-        Debug.Log("TriggerEnter " + other.name);
-        if (other.CompareTag("Sword") || other.CompareTag("Finish"))
+        
+        if (other.CompareTag("Sword"))
         {
-            Debug.Log("Killed a goblin with sword!");
+            GameManager.Instance.AddScore(1);
+            DestroyGoblin();
+        }
+
+        if (other.CompareTag("Finish"))
+        {
             DestroyGoblin();
         }
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log(("Goblin killed a player!"));
             GameManager.Instance.EndGame();
         }
     }
 
     public void DestroyGoblin()
     {
+        GameManager.Instance.goblinDeathSound.Play();
         Destroy(gameObject);
     }
 
@@ -50,5 +58,11 @@ public class Goblin : MonoBehaviour
         var playerPositionX = GameManager.Instance.getPlayerPosition().x;
         var direction = transform.position.x > playerPositionX ? -1 : 1;
         mRigidBody.velocity = new Vector2( direction * speed, mRigidBody.velocity.y);
+        //Turn the model if going right
+        if ((direction > 0 && !_goingRight) || (direction < 0 && _goingRight))
+        {
+            transform.rotation *= Quaternion.Euler(0, 180, 0);
+            _goingRight = !_goingRight;
+        }
     }
 }
