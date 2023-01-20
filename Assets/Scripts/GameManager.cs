@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -14,7 +15,9 @@ public class GameManager : MonoBehaviour
     public Text highScoreText;
     public Text yourScoreText;
     public PlayerController player;
-
+    public AudioSource deathSound;
+    public AudioSource victorySound;
+    
     // Singleton instance of the GameManager.
     private static GameManager sInstance;
 
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
         { Destroy(gameObject); }
         else
         { sInstance = this; }
+        
     }
 
         public void AddScore(int scoreToAdd)
@@ -41,6 +45,13 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        //Play only once
+        if (!deathSound.IsUnityNull())
+        {
+            deathSound.Play();
+            deathSound = null;
+        }
+        
         if(PlayerPrefs.GetInt("Endless_hs",0) < score)
         {
             PlayerPrefs.SetInt("Endless_hs",score);
