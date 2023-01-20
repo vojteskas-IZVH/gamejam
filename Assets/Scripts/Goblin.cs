@@ -11,6 +11,8 @@ public class Goblin : MonoBehaviour
     private Rigidbody2D mRigidBody;
     public AudioSource deathSound;
 
+    private bool _goingRight = false;
+
     private void Awake()
     {
         var colliders = GetComponents<BoxCollider2D>();
@@ -50,5 +52,11 @@ public class Goblin : MonoBehaviour
         var playerPositionX = GameManager.Instance.getPlayerPosition().x;
         var direction = transform.position.x > playerPositionX ? -1 : 1;
         mRigidBody.velocity = new Vector2( direction * speed, mRigidBody.velocity.y);
+        //Turn the model if going right
+        if ((direction > 0 && !_goingRight) || (direction < 0 && _goingRight))
+        {
+            transform.rotation *= Quaternion.Euler(0, 180, 0);
+            _goingRight = !_goingRight;
+        }
     }
 }
