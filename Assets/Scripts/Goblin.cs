@@ -9,6 +9,7 @@ public class Goblin : MonoBehaviour
     public float speed = 1.0f;
     private BoxCollider2D mBoxTrigger;
     private Rigidbody2D mRigidBody;
+    public AudioSource deathSound;
 
     private void Awake()
     {
@@ -17,24 +18,23 @@ public class Goblin : MonoBehaviour
         mRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    public void OnTriggerEnter(Collider other) // other == another collider
+    public void OnTriggerEnter2D(Collider2D other) // other == another collider
     {
-        Debug.Log("TriggerEnter " + other.name);
+        
         if (other.CompareTag("Sword") || other.CompareTag("Finish"))
         {
-            Debug.Log("Killed a goblin with sword!");
             DestroyGoblin();
         }
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log(("Goblin killed a player!"));
             GameManager.Instance.EndGame();
         }
     }
 
     public void DestroyGoblin()
     {
+        GameManager.Instance.goblinDeathSound.Play();
         Destroy(gameObject);
     }
 
