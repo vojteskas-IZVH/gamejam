@@ -22,7 +22,7 @@ public class TopBorder : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            gameManager.endGame();
+            gameManager.EndGame();
         }
 
     }

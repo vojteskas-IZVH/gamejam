@@ -24,7 +24,7 @@ public class MiddlePlane : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            gameManager.addScore(1);
+            gameManager.AddScore(1);
             player.OffGround();
         }
 

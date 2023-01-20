@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour
     public Text yourScoreText;
     public PlayerController player;
 
-    public void addScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = score.ToString();
     }
 
-    public void endGame()
+    public void EndGame()
     {
         if(PlayerPrefs.GetInt("Endless_hs",0) < score)
         {
@@ -33,8 +33,13 @@ public class GameManager : MonoBehaviour
         player.OnGameOver();
     }
 
-    public void newGame()
+    public void NewGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
