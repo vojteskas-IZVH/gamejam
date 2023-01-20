@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
     public void OnGameOver()
     {
         IsAlive = false;
+        myRigidBody.gravityScale = 0;
+        myRigidBody.velocity = new Vector2(0, 0);
     }
     
     void Start()
