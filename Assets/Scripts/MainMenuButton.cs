@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainMenuButton : MonoBehaviour
 {
     public bool loadScene;
+    public bool isLevel;
     public int sceneIndex;
     public GameObject mainMenu;
     public GameObject levelMenu;
-
+    public int selectedLevel;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -26,6 +27,10 @@ public class MainMenuButton : MonoBehaviour
 
     public void OnClick()
     {
+        if(isLevel)
+        {
+            PlayerPrefs.SetInt("ActiveLevel",selectedLevel);
+        }
         if(loadScene)
         {
             SceneManager.LoadScene(sceneIndex);

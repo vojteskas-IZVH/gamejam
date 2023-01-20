@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MiddlePlane : MonoBehaviour
 {
-    public GameManager gameManager;
-    public PlayerController player;
+    private GameManager gameManager;
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()

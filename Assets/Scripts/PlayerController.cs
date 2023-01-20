@@ -78,6 +78,14 @@ public class PlayerController : MonoBehaviour
         myRigidBody.gravityScale = 0;
         myRigidBody.velocity = new Vector2(0, 0);
     }
+
+    public void OnGameStart()
+    {
+        IsAlive = true;
+        myRigidBody.gravityScale = 1.5f;
+        myRigidBody.velocity = new Vector2(0, 0);
+        _inputX = 0;
+    }
     
     void Start()
     {
