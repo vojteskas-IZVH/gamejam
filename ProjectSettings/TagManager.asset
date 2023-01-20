@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - LevelManager
   - Enemy
+  - LevelHolder
   layers:
   - Default
   - TransparentFX
