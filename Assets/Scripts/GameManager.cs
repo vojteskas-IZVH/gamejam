@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,25 @@ public class GameManager : MonoBehaviour
     public Text yourScoreText;
     public PlayerController player;
 
-    public void AddScore(int scoreToAdd)
+    // Singleton instance of the GameManager.
+    private static GameManager sInstance;
+
+    // Getter for the singleton GameManager object.
+    public static GameManager Instance
+    {
+        get { return sInstance; }
+    }
+
+    private void Awake()
+    {
+        // Initialize the singleton instance, if no other exists.
+        if (sInstance != null && sInstance != this)
+        { Destroy(gameObject); }
+        else
+        { sInstance = this; }
+    }
+
+        public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = score.ToString();
@@ -41,5 +60,10 @@ public class GameManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public Vector3 getPlayerPosition()
+    {
+        return player.transform.position;
     }
 }
