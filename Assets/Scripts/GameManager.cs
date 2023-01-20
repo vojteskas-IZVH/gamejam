@@ -33,24 +33,33 @@ public class GameManager : MonoBehaviour
         { sInstance = this; }
     }
 
-    public void addScore(int scoreToAdd)
+        public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = score.ToString();
     }
 
-    public void endGame()
+    public void EndGame()
     {
-        highScoreText.text = "High score: " + score.ToString();
+        if(PlayerPrefs.GetInt("Endless_hs",0) < score)
+        {
+            PlayerPrefs.SetInt("Endless_hs",score);
+        }
+        highScoreText.text = "High score: " + PlayerPrefs.GetInt("Endless_hs",0).ToString();
         yourScoreText.text = "Your score: " + score.ToString();
         scoreCounter.SetActive(false);
         gameOverScreen.SetActive(true);
         player.OnGameOver();
     }
 
-    public void newGame()
+    public void NewGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public Vector3 getPlayerPosition()

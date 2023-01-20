@@ -7,6 +7,22 @@ public class MainMenuButton : MonoBehaviour
 {
     public bool loadScene;
     public int sceneIndex;
+    public GameObject mainMenu;
+    public GameObject levelMenu;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     public void OnClick()
     {
@@ -16,15 +32,15 @@ public class MainMenuButton : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void LoadLevels()
     {
-        
+        mainMenu.SetActive(false);
+        levelMenu.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadMainMenu()
     {
-        
+        mainMenu.SetActive(true);
+        levelMenu.SetActive(false);
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - Sword
+  - LevelManager
   layers:
   - Default
   - TransparentFX
