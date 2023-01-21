@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class LevelHolder : MonoBehaviour
     public Text levelNumberText;
     public Text levelCompletedText;
     public AudioSource deathSound;
+    public AudioSource soundtrack;
 
     private Vector3 originalPosition;
     private int activeLevelNumber;
