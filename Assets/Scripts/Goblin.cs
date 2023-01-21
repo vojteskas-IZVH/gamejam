@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 public class Goblin : MonoBehaviour
 {
     public float speed = 1.0f;
+    public bool isLevel;
     private BoxCollider2D mBoxTrigger;
     private Rigidbody2D mRigidBody;
     public AudioSource deathSound;
@@ -25,7 +26,11 @@ public class Goblin : MonoBehaviour
         
         if (other.CompareTag("Sword"))
         {
-            GameManager.Instance.AddScore(1);
+            if(!isLevel)
+            {
+                GameManager.Instance.AddScore(1);
+            }
+            
             DestroyGoblin();
         }
 
@@ -36,7 +41,12 @@ public class Goblin : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.EndGame();
+            if(isLevel)
+            {
+                LevelHolder.Instance.GameOver();
+            }else{
+                GameManager.Instance.EndGame();
+            }
         }
     }
 

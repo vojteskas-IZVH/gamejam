@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-        public void AddScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = score.ToString();
