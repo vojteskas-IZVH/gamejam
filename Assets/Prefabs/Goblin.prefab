@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6032454079019806672}
   - component: {fileID: 4733001044667071656}
   - component: {fileID: 8199943507472464024}
+  - component: {fileID: 507135566947159860}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Enemy
@@ -220,6 +221,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &507135566947159860
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719237245981727102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a729b7be6ae2654c8251f848a12768a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6046943621788172482
 GameObject:
   m_ObjectHideFlags: 0
