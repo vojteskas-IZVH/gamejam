@@ -220,6 +220,7 @@ MonoBehaviour:
   speed: 1.5
   isLevel: 0
   deathSound: {fileID: 8199943507472464024}
+  turnTreshold: 0.1
 --- !u!82 &8199943507472464024
 AudioSource:
   m_ObjectHideFlags: 0
