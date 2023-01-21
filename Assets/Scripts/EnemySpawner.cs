@@ -37,6 +37,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(isLevel && !LevelHolder.Instance.gameActive)
+        {
+            return;
+        }
         if (gameManager.score < scoreThreshold) return;
         if (_nextSpawnIn > 0)
         {
