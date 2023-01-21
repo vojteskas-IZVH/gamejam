@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 public class Spikes : MonoBehaviour
 {
-    private BoxCollider2D mBoxTrigger;
+    private PolygonCollider2D mBoxTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Spikes : MonoBehaviour
 
     private void Awake()
     {
-        var colliders = GetComponents<BoxCollider2D>();
+        var colliders = GetComponents<PolygonCollider2D>();
         mBoxTrigger = colliders[0]; Assert.IsTrue(mBoxTrigger.isTrigger);
     }
 
