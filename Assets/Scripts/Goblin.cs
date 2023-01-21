@@ -11,6 +11,7 @@ public class Goblin : MonoBehaviour
     private BoxCollider2D mBoxTrigger;
     private Rigidbody2D mRigidBody;
     public AudioSource deathSound;
+    public float turnTreshold = 0.2f;
 
     private bool _goingRight = false;
 
@@ -66,10 +67,13 @@ public class Goblin : MonoBehaviour
     void FixedUpdate()
     {
         var playerPositionX = GameManager.Instance.getPlayerPosition().x;
-        var direction = transform.position.x > playerPositionX ? -1 : 1;
-        mRigidBody.velocity = new Vector2( direction * speed, mRigidBody.velocity.y);
-        //Turn the model if going right
-        if ((direction > 0 && !_goingRight) || (direction < 0 && _goingRight))
+        var distance = transform.position.x - playerPositionX;
+        var direction = distance > 0 ? -1 : 1;
+        if (-turnTreshold > distance || distance > turnTreshold)
+            mRigidBody.velocity = new Vector2( direction * speed, mRigidBody.velocity.y);
+        //Turn the model if going right, if x-distance between goblin and player is bigger then threshold
+        if ((-turnTreshold > distance || distance > turnTreshold) &&
+            ((direction > 0 && !_goingRight) || (direction < 0 && _goingRight)))
         {
             transform.rotation *= Quaternion.Euler(0, 180, 0);
             _goingRight = !_goingRight;
