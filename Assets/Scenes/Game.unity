@@ -893,6 +893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4194001204143265770, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4194001204143265773, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -2117,6 +2121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1737136245}
   enemy: {fileID: 2719237245981727102, guid: 00c75db675091e94dbc37900e4c82066, type: 3}
+  isLevel: 1
   spawnFrequencyMean: 4
   spawnFrequencyStd: 2
   scoreThreshold: 0
@@ -3244,6 +3249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4194001204143265770, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4194001204143265773, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -3666,6 +3675,10 @@ PrefabInstance:
     - target: {fileID: 4194001202989149663, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194001204143265770, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
+      propertyPath: level
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4194001204143265773, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalScale.x
@@ -7439,6 +7452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4194001204143265770, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4194001204143265773, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -10309,7 +10326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1124530809
 Transform:
   m_ObjectHideFlags: 0
@@ -12325,6 +12342,10 @@ PrefabInstance:
     - target: {fileID: 4194001202989149663, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194001204143265770, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
+      propertyPath: level
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4194001204143265773, guid: 6aadbe8f845e54bad89a67d160ea1afb, type: 3}
       propertyPath: m_LocalScale.x

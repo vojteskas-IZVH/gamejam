@@ -7,12 +7,16 @@ public class LevelUnlocker : MonoBehaviour
 {
     public Text levelText;
     public int levelNumber;
-    private LevelManager levelManager;
 
+    private LevelManager levelManager;
     private GameObject child;
+    private GameObject parent;
+    private Button button;
     // Start is called before the first frame update
     void Start()
     {
+        parent = transform.parent.gameObject;
+        button = parent.GetComponent<Button>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         for (int j = 0; j < levelManager.GetLevelCount(); j++)
         {
@@ -24,6 +28,10 @@ public class LevelUnlocker : MonoBehaviour
                     child.SetActive(false);
                 }
                 levelText.text = levelNumber.ToString();
+            }else if(PlayerPrefs.GetInt("Unlocked_level_"+(j+1).ToString(),0) != 1 && levelNumber == j+1)
+            {
+                button.enabled = false;
+
             }
         }
         
