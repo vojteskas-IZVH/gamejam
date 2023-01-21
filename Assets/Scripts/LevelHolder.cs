@@ -16,7 +16,6 @@ public class LevelHolder : MonoBehaviour
     public Text levelNumberText;
     public Text levelCompletedText;
     public AudioSource deathSound;
-    public AudioSource soundtrack;
     public bool gameActive = true;
 
     private Vector3 originalPosition;
