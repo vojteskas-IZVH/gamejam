@@ -25,6 +25,10 @@ public class CameraMovement : MonoBehaviour
         {
             transform.position = new Vector3(player.transform.position.x,player.transform.position.y,transform.position.z);
         }
+        else // hit the edge, go only up and down
+        {
+            transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+        }
         
     }
 }
