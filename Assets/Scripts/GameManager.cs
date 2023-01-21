@@ -74,6 +74,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void VictorySoundPlay()
+    {
+        //Play only once
+        if (!victorySound.IsUnityNull())
+        {
+            victorySound.Play();
+            victorySound = null;
+        }
+    }
+
     public Vector3 getPlayerPosition()
     {
         return player.transform.position;
