@@ -65,6 +65,7 @@ public class LevelHolder : MonoBehaviour
 
     public void LevelCompleted()
     {
+        GameManager.Instance.VictorySoundPlay();
         levelNumberText.text = "Level " + nextLevelNumber;
         nextButton.SetActive(true);
         gameOverScreen.SetActive(true);
@@ -103,9 +104,7 @@ public class LevelHolder : MonoBehaviour
 
     public void PlayAgain()
     {
-        player.OnGameStart();
-        gameOverScreen.SetActive(false);
-        player.transform.position = originalPosition;
+        SceneManager.LoadScene(1);
     }
 
 }
