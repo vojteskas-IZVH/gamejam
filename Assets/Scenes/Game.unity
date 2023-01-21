@@ -881,6 +881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1737136245}
   enemy: {fileID: 2719237245981727102, guid: 00c75db675091e94dbc37900e4c82066, type: 3}
+  isLevel: 1
   spawnFrequencyMean: 4
   spawnFrequencyStd: 2
   scoreThreshold: 0
@@ -5471,7 +5472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1124530809
 Transform:
   m_ObjectHideFlags: 0

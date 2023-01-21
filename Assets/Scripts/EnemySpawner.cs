@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameManager gameManager;
     
     public GameObject enemy;
+    public bool isLevel;
     public float spawnFrequencyMean = 4.0f;
     public float spawnFrequencyStd = 2.0f;
 
@@ -44,6 +45,11 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             var spawned= Instantiate(enemy, transform.position, transform.rotation);
+            if(isLevel)
+            {
+                spawned.GetComponentInChildren<Goblin>().isLevel = true;
+            }
+            
             // spawned.
             _nextSpawnIn = RandomNormal(spawnFrequencyMean, spawnFrequencyStd);
         }
