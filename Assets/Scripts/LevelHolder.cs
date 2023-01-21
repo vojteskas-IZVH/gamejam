@@ -102,6 +102,7 @@ public class LevelHolder : MonoBehaviour
         activeLevel.SetActive(false);
         activeLevel = StartLevel(nextLevelNumber);
         activeLevel.SetActive(true);
+        PlayerPrefs.SetInt("ActiveLevel",nextLevelNumber);
     }
 
     public void PlayAgain()
