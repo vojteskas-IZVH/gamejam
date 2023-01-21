@@ -17,11 +17,13 @@ public class LevelHolder : MonoBehaviour
     public Text levelCompletedText;
     public AudioSource deathSound;
     public AudioSource soundtrack;
+    public bool gameActive = true;
 
     private Vector3 originalPosition;
     private int activeLevelNumber;
     private int nextLevelNumber;
     private GameObject activeLevel;
+    
 
     // Singleton instance of the LevelHolder.
     private static LevelHolder sInstance;
@@ -72,6 +74,7 @@ public class LevelHolder : MonoBehaviour
         nextButton.SetActive(true);
         gameOverScreen.SetActive(true);
         player.OnGameOver();
+        gameActive = false;
     }
 
     public void GameOver()
@@ -88,6 +91,7 @@ public class LevelHolder : MonoBehaviour
         nextButton.SetActive(false);
         gameOverScreen.SetActive(true);
         player.OnGameOver();
+        gameActive = false;
     }
 
     public void PlayNext()
